@@ -58,3 +58,7 @@ Brief Big-O primer
 
 - Big-O ignores constant factors and lower-order terms; it describes asymptotic growth.
 
+
+<br/>
+
+ [Visual Demonstration of Linear and Binary Search](https://www.cs.usfca.edu/~galles/visualization/Search.html)
