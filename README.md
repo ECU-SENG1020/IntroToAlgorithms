@@ -35,8 +35,26 @@ Example (Python, iterative):
 			if arr[mid] == target:
 				return mid
 			elif arr[mid] < target:
+
+				# searched for value is greater
+				# so we only need to consider
+				# the elements to the right of mid
+
+				# we +1 because we know mid does 
+				# not contain the value we are 
+				# searching for
+
 				lo = mid + 1
 			else:
+
+				# searched for value is less
+				# so we only need to consider 
+				# the elements to the left of mid 
+
+				# we -1 because we know mid does 
+				# not contain the value we are 
+				# searching for
+				
 				hi = mid - 1
 		return -1
 
