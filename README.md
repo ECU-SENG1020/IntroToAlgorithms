@@ -3,6 +3,8 @@ Getting started
 
 Quick steps to run the demo scripts and tests locally.
 
+
+
 1.	Make sure Docker Desktop is running
 1. Make sure you are using your Python profile with these extensions - Container Tools and Dev Containers
 1. Open Container
@@ -19,6 +21,14 @@ Quick steps to run the demo scripts and tests locally.
 	1. Search for **Reopen Folder Locally**
 	1. Select **Reopen Folder Locally**
 
+
+> Note: If you have trouble loading container, then you can run locally if you install have requirements installed.
+
+```bash 
+# Make sure you are in the virtual environment created for this class.
+# If you are using Windows, do not use PowerShell.
+pip install -r requirements.txt
+```
 
 Notes
 - The test suite uses a small dynamic importer so filenames that start with digits can be loaded.
