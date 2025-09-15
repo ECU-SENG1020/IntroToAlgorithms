@@ -13,13 +13,42 @@ def binary_search(arr, target):
             high = mid - 1  # Search left half
     return -1  # Target not found
 
-# Example usage
-numbers = [1, 3, 4, 7, 9, 11, 15]
-target = 9
 
-result = binary_search(numbers, target)
 
-if result != -1:
-    print(f"Element {target} found at index {result}")
-else:
-    print(f"Element {target} not found in the list")
+
+def binary_search2(numbers, low, high, key): 
+    if low > high:
+        return -1
+
+    mid = (low + high) // 2
+
+    if numbers[mid] < key: 
+        return binary_search2(numbers, mid + 1, high, key)
+
+    elif numbers[mid] > key:
+        return binary_search2(numbers, low, mid - 1, key)
+
+    return mid
+
+
+def main():
+    # Example usage
+    numbers = [1, 3, 4, 7, 9, 11, 15]
+    target = 9
+
+    result = binary_search(numbers, target)
+
+    if result != -1:
+        print(f"Element {target} found at index {result}")
+    else:
+        print(f"Element {target} not found in the list")
+
+    print("***********")
+    print(binary_search2(numbers,0,6,11))
+
+
+
+if __name__ == "__main__":
+    main()
+
+

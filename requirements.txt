@@ -1,0 +1,6 @@
+
+# Test runner
+pytest>=7.0
+
+# Optional: Jupyter for interactive demos
+# notebook

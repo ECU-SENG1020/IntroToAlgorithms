@@ -1,0 +1,27 @@
+{
+  "name": "Python 3 (micromamba)",
+  "build": { "dockerfile": "Dockerfile" },
+  "workspaceFolder": "/workspace",
+  "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached",
+  "remoteUser": "vscode",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "ms-vscode-remote.remote-containers",
+        "ms-azuretools.vscode-containers",
+        "ms-vscode.live-server",
+        "ms-vsliveshare.vsliveshare",
+        "ms-azuretools.vscode-docker"
+        
+
+      ],
+      "settings": {
+        "python.defaultInterpreterPath": "/opt/conda/envs/dev/bin/python"
+      }
+    }
+  },
+  "postCreateCommand": "micromamba create -y -p /opt/conda/envs/dev python=3.11 pip && /opt/conda/envs/dev/bin/pip install --upgrade pip && /opt/conda/envs/dev/bin/pip install -r /workspace/requirements.txt || true",
+  "postStartCommand": "micromamba shell init -s bash -p /opt/conda || true; echo 'micromamba activate /opt/conda/envs/dev' >> ~/.bashrc || true"
+}
